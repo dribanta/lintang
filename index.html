@@ -76,6 +76,28 @@ p {
         Your browser isn't invited for super fun audio time.
     </audio>
 
+    <script>
+        window.addEventListener('load', () => {
+    Swal.fire({
+        title: 'Mau pake musik?',
+        // text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Iyah',
+        cancelButtonText: 'Ga usah',
+    }).then((result) => {
+        if (result.isConfirmed) {
+            document.querySelector('.song').play();
+            animationTimeline();
+        } else {
+            animationTimeline();
+        }
+    });
+});
+    </script>
+
     <div id="page1" class="page">
         <div class="container">
             <img src="https://dribanta.github.io/lintang/LintangIMG.png" alt="Lintang" class="fade-in-up">
