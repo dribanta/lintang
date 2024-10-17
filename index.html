@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Fadly untuk Lintang</title>
+    <title>Surat Fadly untuk Lintang</title>
     <link rel="stylesheet" href="style.css">
     <style>
 body {
@@ -22,7 +22,6 @@ body {
     height: 100%;
     display: flex;
     align-items: center;
-  }
 }
 
 h1 {
@@ -49,21 +48,47 @@ p {
     background-color: #0056b3;
 }
 
+.container {
+            opacity: 0; /* Mulai dengan gambar tidak terlihat */
+            transform: translateY(20px); /* Pindahkan sedikit ke bawah */
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Atur transisi */
+            text-align: center; /* Memastikan teks di tengah */
+        }
+
+        .container.show {
+            opacity: 1; /* Gambar akan terlihat */
+            transform: translateY(0); /* Kembali ke posisi asli */
+        }
+
+        img {
+            width: 150px; /* Mengatur lebar gambar menjadi 25px */
+            height: auto; /* Menjaga rasio aspek gambar */
+        }
         </style>
 </head>
 <body>
     <audio autoplay loop>
-        <source src="./music.mp3" type="audio/mpeg">
+        <source src="https://dribanta.github.io/lintang/music.mp3" type="audio/mpeg">
     </audio>
 
     <div id="page1" class="page">
+        <div class="container">
+            <img src="https://dribanta.github.io/lintang/LintangIMG.png" alt="Lintang" class="fade-in-up">
+        </div>
+        
+        <script>
+            window.addEventListener('load', () => {
+                const container = document.querySelector('.container');
+                container.classList.add('show');
+            });
+        </script>
         <h1>Hi, Lintang Laily Baharrizky!</h1>
         <p style="text-align:center;">Ini web kecil-kecilan untuk berharap.</p>
         <button class="button" onclick="goToPage2()">Bolehin yah...</button>
     </div>
 
     <div id="page2" class="page" style="display: none;">
-        <p style="text-align:left; padding:0 20%;">Sepuluh hari lalu, aku terakhir hubungin kamu. Hari demi hari, hiruk pikuk sibuk kita berdua, ternyata aku kok resah. Kok ada yang hilang. Seperti mau ada kamu... Tapi ga tahu apa ini bisa dilanjutin.<br><br>Pesan terakhir tidak dibalas. Rasanya seperti ditolak. Tapi jujur aku kangen. Bingung, bagaimana buatmu nyaman. Aku ingin coba lagi, tapi apakah bisa? Apakah ada solusinya? Pliss hubungin aku, aku mau coba cari solusi...<br><br>- tertanda, Fadly</p>
+        <p style="text-align:left; padding:0 20%;">Sepuluh hari lalu, aku terakhir hubungin kamu. Hari demi hari, hiruk pikuk sibuk kita berdua, ternyata aku kok resah. Kok ada yang hilang. Seperti mau ada kamu... Tapi ga tahu apa ini bisa dilanjutin. Ga tau kita ini apa.<br><br>Pesan terakhir tidak dibalas. Rasanya seperti ditolak. Tapi jujur aku kangen. Bingung, bagaimana buatmu nyaman. Aku ingin coba lagi, tapi apakah bisa? Apakah ada solusinya? Pliss hubungin aku, aku mau coba cari solusi...<br><br>- tertanda, Fadly</p>
         <a href="https://wa.me/+628972525521" class="button">Chat akuuuuuu pliss</a>
     </div>
 
